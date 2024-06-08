@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gptnewspaper
+  labels:
+    app: gptnewspaper
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gptnewspaper
+  template:
+    metadata:
+      labels:
+        app: gptnewspaper
+    spec:
+      containers:
+        - name: gptnewspaper
+          image: gptnewspaper.azurecr.io/gptnewspaper1:latests
+          ports:
+            - containerPort: 80
+          env:
+            - name: WEBSOCKET_PING_INTERVAL
+              value: "1"
