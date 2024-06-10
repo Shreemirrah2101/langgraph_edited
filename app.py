@@ -198,5 +198,5 @@ input=st.text_input('Input: ',key="input")
 submit=st.button("Submit")
 
 if submit:
-    st.subheader("Implementing...")
+    st.subheader("NEWS Results:")
     st.write(lang(input))
